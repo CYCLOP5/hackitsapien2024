@@ -14,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/CYCLOP5/hackitsapien2024">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="https://i.postimg.cc/c4n99dMJ/240330-22h49m42s-screenshot.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Deepfake Detection</h3>
