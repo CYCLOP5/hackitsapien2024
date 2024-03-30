@@ -4,7 +4,7 @@ import shutil
 from finalpredicted import predict_deepfake
 
 def main():
-    st.title("DeepFake Detection App")
+    st.title("deepfake checker")
     st.write("Upload a video file and select the method for deepfake detection.")
 
     uploaded_file = st.file_uploader("Choose a video file", type=["mp4"])

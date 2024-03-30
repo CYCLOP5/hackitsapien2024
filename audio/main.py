@@ -1,94 +1,42 @@
-import customtkinter
-from tkinter import filedialog
-import importlib
-from customtkinter import CTkButton, CTkImage
-from tkinter import PhotoImage
-from PIL import Image, ImageDraw, ImageTk
-from tkinter import Tk
+import streamlit as st
+import os
+import librosa
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import joblib
 
-customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("dark-blue") 
+def extract_features(file_path):
+    try:
+        audio, sample_rate = librosa.load(file_path, res_type='kaiser_fast') 
+        mfccs = np.mean(librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40).T, axis=0)
+        return mfccs
+    except Exception as e:
+        st.error(f"Error encountered while parsing file: {file_path}")
+        return None
 
-app = customtkinter.CTk()
-app.geometry("600x500")
-app.title(" ")
+loaded_model = joblib.load("./rff.joblib")
 
-def run():
-    global entry_result, completion_label 
+def classify_audio(example_file_path):
+    example_features = extract_features(example_file_path)
+    if example_features is not None:
+        prediction = loaded_model.predict([example_features])
+        class_label = "Real" if prediction[0] == 1 else "Fake"
+        return f"{class_label} Audio File"
+    else:
+        return "Error extracting features from the example file."
 
-    dir = str(entry_1.get())
-    module_name = "test"
-    function_name = "runtest"
-    module = importlib.import_module(module_name)
-    function = getattr(module, function_name)
+st.title("deepfake audio check")
+st.write("Upload an audio file to classify if it's real or fake.")
 
-    result = function(dir)
+uploaded_file = st.file_uploader("Upload Audio File", type=["wav"])
 
-    completion_label = customtkinter.CTkLabel(master=app, text="Completion: 100%")
-    completion_label.pack(pady=(40, 5), padx=5)
+if uploaded_file is not None:
+    st.write("Uploaded file details:")
+    file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
+    st.write(file_details)
 
-    if not hasattr(run, 'completion_counter'):
-        run.completion_counter = 0
-
-    run.completion_counter += 1
-
-    completion_label.configure(text=f"{run.completion_counter}. operation completed")
-
-    entry_result = customtkinter.CTkEntry(master=app, fg_color="white", text_color="black", justify="center")
-    entry_result.pack(padx=5, pady=(5, 0), ipadx=70)
-    entry_result.insert("0", result)
-
-def my_fun():
-    global entry_result, completion_label
-
-    entry_1.delete(0, "end")
-    my_dir1 = filedialog.askopenfilename()
-    entry_1.insert("0", my_dir1)
-
-    if 'entry_result' in globals() and entry_result is not None:
-        entry_result.destroy()
-
-    if 'completion_label' in globals() and completion_label is not None:
-        completion_label.destroy()
-
-
-logo_image = None
-
-label_1 = customtkinter.CTkLabel(master=app, justify=customtkinter.LEFT, image=logo_image,text="    Deepfake Audio Detection",
-                                 compound="left",
-                                 font=customtkinter.CTkFont(size=20, weight="bold"))
-label_1.pack(pady=20, padx=10)
-
-frame = customtkinter.CTkFrame(master=app)
-frame.pack(pady=20)
-
-label_2 = customtkinter.CTkLabel(master=frame, justify=customtkinter.LEFT, text="  Upload the Audio File:  ")
-label_2.pack(pady=5, padx=10, anchor='w')  
-
-entry_1 = customtkinter.CTkEntry(master=frame, placeholder_text=".wav")
-entry_1.pack(side=customtkinter.LEFT, padx=5, ipadx=100)
-
-folder_button = customtkinter.CTkButton(master=frame, text="Browse", border_width=2, fg_color="black", command=my_fun)
-folder_button.pack(side=customtkinter.LEFT, padx=5)
-
-checkbox_1 = customtkinter.CTkCheckBox(master=app,text="Model accuracy rate")
-checkbox_1.pack(pady=30, padx=10)
-
-def create_gradient_image(width, height, color1, color2):
-    image = Image.new("RGB", (width, height), color1)
-    draw = ImageDraw.Draw(image)
-    draw.rectangle([0, height // 2, width, height], fill=color2)
-    return CTkImage(image)
-
-button_width = 100
-button_height = 30
-
-gradient_image = create_gradient_image(button_width, button_height, "cyan", "blue")
-
-button_1 = CTkButton(master=app, command=run)
-button_1.configure(image=gradient_image, compound="center", text="Run")
-button_1.pack(pady=0, padx=10)
-
-app.mainloop()
-
-#onurkaya
+    if st.button("Classify"):
+        result = classify_audio(uploaded_file)
+        st.write("Classification Result:")
+        st.write(result)
