@@ -20,7 +20,7 @@
 <h3 align="center">Deepfake Detection</h3>
 
   <p align="center">
-    Program inputs an "Input.mp4" file and converts each frame into a spectrogram with amplitude charted and adds the original videos' audio back after frame merging. Inspired by Krystian Strzałka bad apple spectrogram.
+    Program inputs a video file and converts each frame into a spectrogram with amplitude charted and adds the original videos' audio back after frame merging. Inspired by Krystian Strzałka bad apple spectrogram.
     <br />
     <a href="https://github.com/CYCLOP5/hackitsapien2024"><strong>Explore the docs »</strong></a>
     <br />
@@ -168,7 +168,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- REFERENCES -->
 ## References
 
+Datasets used:
 
+* https://keithito.com/LJ-Speech-Dataset/
+
+* https://www.kaggle.com/c/deepfake-detection-challenge
+
+Study references:
+
+* https://arxiv.org/abs/2203.00108
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
