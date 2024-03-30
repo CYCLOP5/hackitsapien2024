@@ -25,7 +25,7 @@
     <a href="https://github.com/CYCLOP5/hackitsapien2024"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/CYCLOP5/hackitsapien2024">View Demo</a>
+    <a href="https://8503-01ht7x2t1ssxtbhx11kz2m4dwp.cloudspaces.litng.ai">View Demo</a>
     ·
     <a href="https://github.com/CYCLOP5/hackitsapien2024/issues">Report Bug</a>
     ·
