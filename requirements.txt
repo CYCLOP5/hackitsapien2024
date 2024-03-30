@@ -56,9 +56,6 @@ idna
 imageio
 imageio-ffmpeg
 importlib_resources
-ipykernel
-ipython
-ipywidgets
 isoduration
 jedi
 Jinja2
