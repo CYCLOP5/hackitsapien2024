@@ -14,13 +14,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/CYCLOP5/hackitsapien2024">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="https://i.postimg.cc/c4n99dMJ/240330-22h49m42s-screenshot.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Deepfake Detection</h3>
 
   <p align="center">
-    Program inputs a video file and converts each frame into a spectrogram with amplitude charted and adds the original videos' audio back after frame merging. Inspired by Krystian Strzałka bad apple spectrogram.
+    The project is a deepfake detection system designed to analyze videos and determine the likelihood of them being manipulated. By inputting a video file, the system utilizes advanced algorithms to detect signs of deepfake technology, providing users with a probability score indicating the likelihood of manipulation. This enables users to identify potentially deceptive content and take appropriate action.
     <br />
     <a href="https://github.com/CYCLOP5/hackitsapien2024"><strong>Explore the docs »</strong></a>
     <br />
@@ -53,8 +53,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#references">References</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -65,13 +65,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The project inputs an "Input.mp4" file which then gives an option to either generate spectrogram frames which can be ended abruptly and conitnued later if required. The other option merges the generated frames and creates a spectrogram with the original video's audio.
+The project is a deepfake detection system designed to analyze videos and determine the likelihood of them being manipulated. By inputting a video file, the system utilizes advanced algorithms to detect signs of deepfake technology, providing users with a probability score indicating the likelihood of manipulation. This enables users to identify potentially deceptive content and take appropriate action.
 
 
 
 ### Built With
 
-* [![Python][Python]][Python-url]
+* Python
 * Open-CV
 * matplotlib
 * ffmpeg-python
