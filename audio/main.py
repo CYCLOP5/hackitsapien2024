@@ -15,7 +15,7 @@ def extract_features(file_path):
         st.error(f"Error encountered while parsing file: {file_path}")
         return None
 
-loaded_model = joblib.load("./rff.joblib")
+loaded_model = joblib.load("./svm_model.joblib")
 
 def classify_audio(example_file_path):
     example_features = extract_features(example_file_path)
@@ -27,8 +27,7 @@ def classify_audio(example_file_path):
         return "Error extracting features from the example file."
 
 st.title("deepfake audio check")
-st.write("Upload an audio file to classify if it's real or fake.")
-
+st.write("This app classifies audio files as real or fake.")
 uploaded_file = st.file_uploader("Upload Audio File", type=["wav"])
 
 if uploaded_file is not None:
@@ -38,5 +37,4 @@ if uploaded_file is not None:
 
     if st.button("Classify"):
         result = classify_audio(uploaded_file)
-        st.write("Classification Result:")
         st.write(result)

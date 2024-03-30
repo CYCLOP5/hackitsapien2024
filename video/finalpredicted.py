@@ -40,7 +40,7 @@ def predict_deepfake(input_videofile, df_method, debug=False, verbose=False):
     crop_faces_from_video(input_videofile, output_path, plain_faces_data_path, overwrite=True)
 
     if df_method == 'plain_frames':
-        model_path = 'plain_frame_model.chkpt'
+        model_path = 'final.chkpt'
         frames_path = plain_faces_data_path
     else:
         raise Exception("Unknown method")
