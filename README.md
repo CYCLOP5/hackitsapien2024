@@ -22,14 +22,14 @@
   <p align="center">
     Program inputs an "Input.mp4" file and converts each frame into a spectrogram with amplitude charted and adds the original videos' audio back after frame merging. Inspired by Krystian Strzałka bad apple spectrogram.
     <br />
-    <a href="https://github.com/CYCLOP5/Video-To-Spectrogram"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/CYCLOP5/hackitsapien2024"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/CYCLOP5/Video-To-Spectrogram">View Demo</a>
+    <a href="https://github.com/CYCLOP5/hackitsapien2024">View Demo</a>
     ·
-    <a href="https://github.com/CYCLOP5/Video-To-Spectrogram/issues">Report Bug</a>
+    <a href="https://github.com/CYCLOP5/hackitsapien2024/issues">Report Bug</a>
     ·
-    <a href="https://github.com/CYCLOP5/Video-To-Spectrogram/issues">Request Feature</a>
+    <a href="https://github.com/CYCLOP5/hackitsapien2024/issues">Request Feature</a>
   </p>
 </div>
 
