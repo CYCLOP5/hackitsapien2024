@@ -1,10 +1,10 @@
 import os
 import librosa
 import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-import joblib 
+from joblib import dump
 
 data_dir = "../DATASET/TRAINING/audio/data"
 
@@ -40,13 +40,13 @@ X_train = [x for x in X_train if x is not None]
 X_test = [x for x in X_test if x is not None]
 
 param_grid = {
-    'n_estimators': [100, 200, 300],
-    'max_depth': [None, 10, 20],
-    'min_samples_split': [2, 5, 10],
-    'min_samples_leaf': [1, 2, 4]
+    'n_estimators': [100, 200],
+    'max_depth': [None, 10,],
+    'min_samples_split': [2, 5],
+    'min_samples_leaf': [1, 2]
 }
 
-grid_search = GridSearchCV(RandomForestClassifier(random_state=42), param_grid, cv=5)
+grid_search = GridSearchCV(RandomForestClassifier(random_state=42), param_grid, cv=5, n_jobs=-1)
 grid_search.fit(X_train, y_train)
 
 best_model = grid_search.best_estimator_
@@ -56,5 +56,5 @@ accuracy = accuracy_score(y_test, y_pred)
 print("Test Accuracy: {:.2f}%".format(accuracy * 100))
 
 model_filename = "rffff.joblib"
-joblib.dump(best_model, model_filename)
+dump(best_model, model_filename)
 print(f"Model saved as {model_filename}")
