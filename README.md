@@ -13,8 +13,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/CYCLOP5/Video-To-Spectrogram">
-    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/f8/0f/85/f80f8576-fead-09c9-a424-9505e8a8e7c8/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg" alt="Logo" width="80" height="80">
+  <a href="https://github.com/CYCLOP5/hackitsapien2024">
+    <img src="" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Deepfake Detection</h3>
@@ -131,7 +131,7 @@ streamlit run audio/main.py
 For video open the terminal and run the following command:
 ```sh
 streamlit run video/main.py
-
+```
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -188,18 +188,19 @@ Project Link: [https://github.com/CYCLOP5/hackitsapien2024](https://github.com/C
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/CYCLOP5/Video-To-Spectrogram.svg?style=for-the-badge
-[contributors-url]: https://github.com/CYCLOP5/Video-To-Spectrogram/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/CYCLOP5/Video-To-Spectrogram.svg?style=for-the-badge
-[forks-url]: https://github.com/CYCLOP5/Video-To-Spectrogram/network/members
-[stars-shield]: https://img.shields.io/github/stars/CYCLOP5/Video-To-Spectrogram.svg?style=for-the-badge
-[stars-url]: https://github.com/CYCLOP5/Video-To-Spectrogram/stargazers
-[issues-shield]: https://img.shields.io/github/issues/CYCLOP5/Video-To-Spectrogram.svg?style=for-the-badge
-[issues-url]: https://github.com/CYCLOP5/Video-To-Spectrogram/issues
-[license-shield]: https://img.shields.io/github/license/CYCLOP5/Video-To-Spectrogram.svg?style=for-the-badge
-[license-url]: https://github.com/CYCLOP5/Video-To-Spectrogram/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/CYCLOP5/hackitsapien2024.svg?style=for-the-badge
+[contributors-url]: https://github.com/CYCLOP5/hackitsapien2024/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/CYCLOP5/hackitsapien2024.svg?style=for-the-badge
+[forks-url]: https://github.com/CYCLOP5/hackitsapien2024/network/members
+[stars-shield]: https://img.shields.io/github/stars/CYCLOP5/hackitsapien2024.svg?style=for-the-badge
+[stars-url]: https://github.com/CYCLOP5/hackitsapien2024/stargazers
+[issues-shield]: https://img.shields.io/github/issues/CYCLOP5/hackitsapien2024.svg?style=for-the-badge
+[issues-url]: https://github.com/CYCLOP5/hackitsapien2024/issues
+[license-shield]: https://img.shields.io/github/license/CYCLOP5/hackitsapien2024.svg?style=for-the-badge
+[license-url]: https://github.com/CYCLOP5/hackitsapien2024/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/vnjhaveri
 [product-screenshot]: images/screenshot.png
 [Python]: ![python-logo](https://download.logo.wine/logo/Python_(programming_language)/Python_(programming_language)-Logo.wine.png)
 [Python-url]:https://www.python.org/
+
